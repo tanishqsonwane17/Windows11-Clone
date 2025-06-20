@@ -4,14 +4,15 @@ const newItem = document.getElementById("new");
 const newItems = document.getElementsByClassName("newItems")[0];
 const folderOption = document.getElementById("folder-option");
 const foldersContainer = document.querySelector(".folders");
-let folder;
+
 desktop.addEventListener("contextmenu", function (e) {
   e.preventDefault();
+  menu.classList.remove("hidden");
+  newItems.classList.add("hidden");
 
   menu.style.left = `${e.clientX}px`;
   menu.style.top = `${e.clientY}px`;
   menu.style.bottom = "auto";
-  menu.classList.remove("hidden");
 
   if (e.clientY > window.innerHeight / 2) {
     menu.style.top = "auto";
@@ -30,7 +31,6 @@ document.addEventListener("click", () => {
 
 newItem.addEventListener("mouseenter", function (e) {
   e.preventDefault();
-
   newItems.classList.remove("hidden");
 
   newItems.style.left = `${menu.offsetLeft + menu.offsetWidth + 10}px`;
@@ -48,8 +48,11 @@ newItem.addEventListener("mouseenter", function (e) {
   }
 });
 
-addEventListener("click", function () {
- folder = document.createElement("div");  folder.className =
+folderOption.addEventListener("click", (event) => {
+  event.stopPropagation(); 
+
+  const folder = document.createElement("div");
+  folder.className =
     "folder w-20 h-24 flex flex-col items-center justify-center text-4xl cursor-pointer";
   folder.innerHTML = `📁<span class="text-xs mt-1 text-center">New Folder</span>`;
   foldersContainer.appendChild(folder);
@@ -58,15 +61,11 @@ addEventListener("click", function () {
   newItems.classList.add("hidden");
 });
 
-const now  = new Date()
-let date = now.toLocaleDateString()
-let time = now.toLocaleTimeString([],{
-    hour:'2-digit',
-    minute:'2-digit'
-})
-console.log(date, time)
-
-navigator.getBattery().then(function(battery) {
-  let level = battery.level * 100; // value is between 0 and 1
-  console.log(`Battery Level: ${level}%`);
+const now = new Date();
+let date = now.toLocaleDateString();
+let time = now.toLocaleTimeString([], {
+  hour: "2-digit",
+  minute: "2-digit",
 });
+console.log(date);
+console.log(time);
