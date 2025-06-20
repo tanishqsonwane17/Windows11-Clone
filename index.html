@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <main class="h-screen w-full relative z-10 text-white bg-image" id="desktop">
+    <div id="contextMenu" class="hidden fixed bg-gray-800 text-white w-36 rounded shadow-md z-50 p-2 space-y-2">
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">Refresh</p>
+      <p id="new" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">New </p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">Settings</p>
+    </div>
+
+    <div class="bottom-nav h-16 w-full fixed bottom-0">
+      <nav class="flex items-center justify-center h-full px-6 shadow-lg">
+        <ul class="flex gap-5 items-center">
+          <li><img src="./images/window.png" alt="Windows" class="h-8 w-8" /></li>
+          <li><img src="./images/microsoft (1).png" alt="MS" class="h-8 w-8" /></li>
+          <li><img src="./images/edge.png" alt="Edge" class="h-7 w-7" /></li>
+          <li><img src="./images/chrome.png" alt="Chrome" class="h-7 w-7" /></li>
+          <li><img src="./images/file-explorer.png" alt="Files" class="h-7 w-7" /></li>
+          <li><img src="./images/word.png" alt="Word" class="h-7 w-7" /></li>
+        </ul>
+      </nav>
+    </div>
+  </main> 
+   <script src="script.js"></script>
+</body>
+</html>
