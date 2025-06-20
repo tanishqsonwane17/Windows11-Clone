@@ -13,15 +13,29 @@
   width: 100vw;
   background: url('https://plus.unsplash.com/premium_photo-1669981123704-5836330e3ddd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2luZG93cyUyMDEwJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww') no-repeat center center;
   background-size: cover;
-  z-index: -1; /* So it stays behind all content */
+  z-index: -1;
 }
 .bottom-nav {
-    background-color: rgba(255, 255, 255, 0.543);
-    box-shadow: 2px 2px 18px 1px rgba(0, 0, 0, 0.2); /* ✅ corrected */
+ background-color: rgba(255, 255, 255, 0.543);
+ box-shadow: 2px 2px 18px 1px rgba(0, 0, 0, 0.2); 
 }
 nav ul li{
     cursor: pointer;
 }
 nav ul li :active{
     scale: .8;
+}
+#contextMenu{
+    line-height: 1.3vw;
+    color: rgb(224, 222, 222);
+    border-radius: 1vw;
+}
+hr{
+    border: 1px solid rgba(255, 255, 255, 0.116);
+}
+.folder{
+    flex-wrap: wrap;
+}
+.dateandtime{
+    line-height: 1.1vw;
 }
