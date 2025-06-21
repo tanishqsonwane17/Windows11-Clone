@@ -5,6 +5,7 @@ const newItems = document.getElementsByClassName("newItems")[0];
 const folderOption = document.getElementById("folder-option");
 const foldersContainer = document.querySelector(".folders");
 const deleteItems = document.querySelector('.deleteItems')
+const renamebtn = document.querySelector('#renamebtn')
 const deleteFolder = document.querySelector('#deleteFolder')
 desktop.addEventListener("contextmenu", function (e) {
   e.preventDefault();
@@ -70,7 +71,6 @@ foldersContainer.addEventListener("contextmenu", function (e) {
   if (clickedFolder) {
     e.preventDefault(); 
     e.stopPropagation();
-    console.log("Folder right-clicked!");
     SelectedFolder = clickedFolder
     deleteItems.classList.remove("hidden"); 
     menu.classList.add("hidden"); 
@@ -85,15 +85,41 @@ deleteFolder.addEventListener('click',function(){
     deleteItems.classList.add('hidden')
   }
 })
+  renamebtn.addEventListener('click',function(){
+    if(!SelectedFolder) return
+      const selectedElement = SelectedFolder.querySelector('span')
+      let oldName = selectedElement.innerHTML;
+
+      let input = document.createElement('input')
+      input.type = 'text'
+      input.className= 'text-xs mt-1 text-center w-16 border-4 text-black'
+      input.value = oldName
+  SelectedFolder.replaceChild(input, selectedElement);
+    input.focus();
+    input.addEventListener('keydown', function (e) {
+    if (e.key == 'Enter') {
+      renameInputToSpan(input);
+    }
+  });
+  })
+  function renameInputToSpan(inputElement) {
+  let newName = inputElement.value.trim();
+
+  if (newName ==='') {
+    newName = 'untitled';
+  }
+ 
+  const span = document.createElement('span');
+   inputElement.parentElement.replaceChild(span, inputElement);
+  span.innerText = newName;
+  span.className = 'text-xs mt-1 text-center';
 
 
 
-const now = new Date();
-let date = now.toLocaleDateString();
-let time = now.toLocaleTimeString([], {
-  hour: "2-digit",
-  minute: "2-digit",
-});
+  deleteItems.classList.add('hidden');
 
-console.log(date);
-console.log(time);
+
+
+
+  SelectedFolder = null;
+}
