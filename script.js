@@ -4,12 +4,13 @@ const newItem = document.getElementById("new");
 const newItems = document.getElementsByClassName("newItems")[0];
 const folderOption = document.getElementById("folder-option");
 const foldersContainer = document.querySelector(".folders");
-
+const deleteItems = document.querySelector('.deleteItems')
+const deleteFolder = document.querySelector('#deleteFolder')
 desktop.addEventListener("contextmenu", function (e) {
   e.preventDefault();
-  menu.classList.remove("hidden");
-  newItems.classList.add("hidden");
 
+  newItems.classList.add("hidden");
+  menu.classList.remove("hidden");
   menu.style.left = `${e.clientX}px`;
   menu.style.top = `${e.clientY}px`;
   menu.style.bottom = "auto";
@@ -31,6 +32,7 @@ document.addEventListener("click", () => {
 
 newItem.addEventListener("mouseenter", function (e) {
   e.preventDefault();
+
   newItems.classList.remove("hidden");
 
   newItems.style.left = `${menu.offsetLeft + menu.offsetWidth + 10}px`;
@@ -49,7 +51,7 @@ newItem.addEventListener("mouseenter", function (e) {
 });
 
 folderOption.addEventListener("click", (event) => {
-  event.stopPropagation(); 
+  event.stopPropagation();
 
   const folder = document.createElement("div");
   folder.className =
@@ -61,11 +63,37 @@ folderOption.addEventListener("click", (event) => {
   newItems.classList.add("hidden");
 });
 
+let SelectedFolder = null
+
+foldersContainer.addEventListener("contextmenu", function (e) {
+  const clickedFolder = e.target.closest(".folder");
+  if (clickedFolder) {
+    e.preventDefault(); 
+    e.stopPropagation();
+    console.log("Folder right-clicked!");
+    SelectedFolder = clickedFolder
+    deleteItems.classList.remove("hidden"); 
+    menu.classList.add("hidden"); 
+  }
+  
+});
+
+deleteFolder.addEventListener('click',function(){
+  if(SelectedFolder){
+    SelectedFolder.remove()
+    SelectedFolder = null
+    deleteItems.classList.add('hidden')
+  }
+})
+
+
+
 const now = new Date();
 let date = now.toLocaleDateString();
 let time = now.toLocaleTimeString([], {
   hour: "2-digit",
   minute: "2-digit",
 });
+
 console.log(date);
 console.log(time);

@@ -14,7 +14,7 @@
 <body>
 
   <main class="h-screen w-full relative z-10 text-white bg-image" id="desktop">
-<div class="folders flex flex-wrap gap-6 p-6 ">
+<div class="folders flex-wrap gap-6 p-6 ">
   </div>
   </div>
 </div>
@@ -45,6 +45,32 @@
       <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">🗨️ Text Document</p>
       <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">📄 Microsoft Excel Worksheet</p>
       <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">📂 Compresses (Zipped) Folder</p>
+
+    </div>
+    <div class="delete-options">
+      <div class="deleteItems hidden fixed bg-gray-800 text-white w-[18vw] rounded-xl shadow-md mx-[1vw] z-100 p-2 space-y-2 text-sm">
+        <div class="flex text-xs justify-center items-center " >
+      <p id = "folder-option" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"> <i class="ri-scissors-cut-line px-2 text-[17px]"></i>  &nbsp; Cut</p>
+      <p id="new" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-file-copy-line px-2 text-[17px] "></i> Copy </p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-letter-spacing-2 px-2 text-[17px] "></i> Rename</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-battery-share-line px-2 text-[17px] "></i> Share</p>
+      <p id="deleteFolder" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-delete-bin-6-line px-2 text-[17px] "></i> Delete</p>
+                    
+        </div>
+        <hr>
+      <p id = "folder-option" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer  "> <span class="px-2">📁</span> Open</p>
+      <p id="new" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-share-forward-box-line px-2"></i> Share </p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-pushpin-line px-2"></i> Pin to Quick Access</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-pushpin-line px-2"></i> Pin to Start</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-folder-zip-line px-2"></i> Compress to zip</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-tools-line px-2"></i> Properties </p>
+      <hr>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-download-cloud-line px-2"></i> Always keep on device</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-cloud-line px-2"></i> Free up space</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"> <i class="ri-terminal-box-fill px-2"></i> Open in terminalt</p>
+      <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"><i class="ri-more-line px-2"></i> Show more options</p>
+
+    </div>
 
     </div>
     <div class="bottom-nav h-16 w-full fixed bottom-0">
