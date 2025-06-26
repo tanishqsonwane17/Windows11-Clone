@@ -1,0 +1,20 @@
+{
+  "name": "vite-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:css": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/styles.css --modify",
+    "tailwind": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}
