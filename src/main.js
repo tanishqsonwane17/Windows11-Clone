@@ -1,4 +1,6 @@
 import "./css/styles.css";
 import { basicSetUP } from "./javascripts/script";
 
-basicSetUP();
+document.addEventListener("DOMContentLoaded", () => {
+  basicSetUP();
+});

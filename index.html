@@ -9,91 +9,101 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="relative z-0">
     <main
-      class="h-screen w-full relative z-10 text-white bg-image"
+      class="h-screen w-full absolute z-10 text-white bg-image"
       id="desktop"
     >
-      <div class="folders grid grid-cols flex-wrap gap-6 p-6"></div>
+      <div class="folders fixed w-full h-screen flex"></div>
 
       <div
         id="contextMenu"
-        class="hidden fixed bg-gray-800 text-white w-[16vw] rounded shadow-md z-50 p-2 space-y-2"
+        class="absolute bg-gray-800 text-white rounded shadow-md z-50 hidden"
       >
-        <p id="view" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-eye-line px-2"></i> View
-        </p>
-        <p
-          id="pasteFolder"
-          class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
-        >
-          <i class="ri-clipboard-line px-2"></i> Paste
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-sort-asc px-2"></i> Sort by
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-reset-right-line px-2"></i> Refresh
-        </p>
-        <hr />
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-arrow-go-back-line px-2"></i> Undo delete
-        </p>
-        <p id="new" class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-add-circle-line px-2"></i> New
-        </p>
-        <hr />
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-computer-line px-2"></i> Display settings
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-pencil-line px-2"></i> Personalize
-        </p>
-        <hr />
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-terminal-box-fill px-2"></i> Open in terminal
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-more-line px-2"></i> Show more options
-        </p>
+        <div class="wrapper w-full h-fit flex gap-2 flex-col p-2">
+          <p
+            id="view"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-eye-line px-2"></i> View
+          </p>
+          <p
+            id="pasteFolder"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-clipboard-line px-2"></i> Paste
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-sort-asc px-2"></i> Sort by
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-reset-right-line px-2"></i> Refresh
+          </p>
+          <hr />
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-arrow-go-back-line px-2"></i> Undo delete
+          </p>
+          <p
+            id="new"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-add-circle-line px-2"></i> New
+          </p>
+          <hr />
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-computer-line px-2"></i> Display settings
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-pencil-line px-2"></i> Personalize
+          </p>
+          <hr />
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-terminal-box-fill px-2"></i> Open in terminal
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer text-[.9rem]">
+            <i class="ri-more-line px-2"></i> Show more options
+          </p>
+        </div>
       </div>
 
       <div
-        class="newItems hidden fixed bg-gray-800 text-white w-[18vw] rounded-xl shadow-md mx-[1vw] z-100 p-2 space-y-2 text-md"
+        class="newItems hidden fixed bg-gray-800 text-white w-fit rounded-xl shadow-md mx-[1vw] z-99"
       >
-        <p
-          id="folder-option"
-          class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
-        >
-          📁 Folder
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          ↗️ Shortcut
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📃 Microsoft Access Database
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          🗺️ Bitmap image
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📘 Microsoft Word Document
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📙 Microsoft Powerpoint
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📗 Microsoft Publisher Document
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          🗨️ Text Document
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📄 Microsoft Excel Worksheet
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          📂 Compressed (Zipped) Folder
-        </p>
+        <div class="wrapper w-full h-fit flex gap-1 flex-col p-2">
+          <p
+            id="folder-option"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            📁 Folder
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            ↗️ Shortcut
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📃 Microsoft Access Database
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            🗺️ Bitmap image
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📘 Microsoft Word Document
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📙 Microsoft Powerpoint
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📗 Microsoft Publisher Document
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            🗨️ Text Document
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📄 Microsoft Excel Worksheet
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            📂 Compressed (Zipped) Folder
+          </p>
+        </div>
       </div>
 
       <div class="delete-options">
@@ -165,37 +175,39 @@
       </div>
 
       <div
-        class="view-options hidden fixed bg-gray-800 text-white w-[18vw] rounded-xl shadow-md mx-[1vw] z-100 p-2 space-y-2 text-md"
+        class="view-options hidden fixed bg-gray-800 text-white w-fit rounded-xl shadow-md mx-[1vw] z-99"
       >
-        <p
-          id="large-icon"
-          class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
-        >
-          <i class="ri-computer-line px-2"></i> Large icons
-        </p>
-        <p
-          id="medium-icon"
-          class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
-        >
-          <i class="ri-artboard-line px-2"></i> Medium icons
-        </p>
-        <p
-          id="small-icon"
-          class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
-        >
-          <i class="ri-layout-grid-line px-2"></i> Small icons
-        </p>
-        <hr />
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-magic-line px-2"></i> Auto Arrange items
-        </p>
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-square-line px-2"></i> Align items to grid
-        </p>
-        <hr />
-        <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
-          <i class="ri-eye-line px-2"></i> Show desktop icons
-        </p>
+        <div class="wrapper w-full h-fit flex gap-1 flex-col p-2">
+          <p
+            id="large-icon"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-computer-line px-2"></i> Large icons
+          </p>
+          <p
+            id="medium-icon"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-artboard-line px-2"></i> Medium icons
+          </p>
+          <p
+            id="small-icon"
+            class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="ri-layout-grid-line px-2"></i> Small icons
+          </p>
+          <hr />
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-magic-line px-2"></i> Auto Arrange items
+          </p>
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-square-line px-2"></i> Align items to grid
+          </p>
+          <hr />
+          <p class="hover:bg-gray-600 px-2 py-1 rounded cursor-pointer">
+            <i class="ri-eye-line px-2"></i> Show desktop icons
+          </p>
+        </div>
       </div>
 
       <div class="bottom-nav h-16 w-full fixed bottom-0">
@@ -244,7 +256,10 @@
         </nav>
       </div>
     </main>
-
+    <!--This div is for loading the tailwind by default it loads only written classes to fix this loadtailwind is made -->
+    <div class="loadtailwind hidden">
+      <div class="loadclasses flex"></div>
+    </div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
